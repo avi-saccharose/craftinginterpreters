@@ -13,7 +13,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           submodules: 'true'
+      - uses: dart-lang/setup-dart@v1
 
+      - run: dart pub get
       - name: Create local.properties
         run: make get && make book && tar -cvf book.tar /site
       - name: Upload book
