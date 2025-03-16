@@ -14,6 +14,8 @@ jobs:
         with:
           submodules: 'true'
       - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: 2.12.0
       - name: Create local.properties
         run: make get && make book && tar -cvf book.tar /site
       - name: Upload book
